@@ -28,5 +28,13 @@ add_executable(client
   ./helloworld.pb.h
   ./client.cc)
 
+add_executable(inproc
+  ./helloworld.grpc.pb.h
+  ./helloworld.grpc.pb.cc
+  ./helloworld.pb.cc
+  ./helloworld.pb.h
+  ./inproc.cc)
+  
 target_link_libraries(server PRIVATE gRPC::gpr gRPC::grpc gRPC::grpc++ gRPC::grpc++_alts gRPC::grpc++_reflection protobuf::libprotoc protobuf::libprotobuf protobuf::libprotobuf-lite)
 target_link_libraries(client PRIVATE gRPC::gpr gRPC::grpc gRPC::grpc++ gRPC::grpc++_alts gRPC::grpc++_reflection protobuf::libprotoc protobuf::libprotobuf protobuf::libprotobuf-lite)
+target_link_libraries(inproc PRIVATE gRPC::gpr gRPC::grpc gRPC::grpc++ gRPC::grpc++_alts gRPC::grpc++_reflection protobuf::libprotoc protobuf::libprotobuf protobuf::libprotobuf-lite)
